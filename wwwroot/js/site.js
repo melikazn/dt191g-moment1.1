@@ -5,7 +5,7 @@ function checkDayofWeek() {
 
     // Om det är fredag (5), visa meddelandet "Trevlig helg! Idag är det fredag!"
     if (dayOfWeek === 5) {
-        alert("Trevlig helg! Idag är det fredag!");
+        alert("Idag är det fredag!");
     } 
     // Om det är helg (Söndag eller Lördag), visa meddelandet "Trevlig helg!"
     else if (dayOfWeek === 0 || dayOfWeek === 6) {
