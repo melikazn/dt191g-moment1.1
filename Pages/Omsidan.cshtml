@@ -1,0 +1,44 @@
+@page
+@model IndexModel
+ <!-- Om mig -->
+@{
+    ViewData["Title"] = "Om sidan";
+}
+
+<div class="text-center">
+    <h1>Om Sidan</h1>
+     <!-- En bild på mig -->
+    <img src="~/images/minbild.jpg" alt="Profilbild" class="img-fluid rounded-circle" style="width: 150px; height: 150px;" />
+    <p class="mt-3">
+        Hej! Jag heter Melika och har skapat denna webbplats som en del av mina studier i kursen dt191g.
+    </p>
+    <p>
+        Jag studerar andra året i programmet webbutveckling. Jag gillar att skapa responsiva och moderna webbplatser.
+    </p>
+    <p>
+        Vill du veta mer om mig eller kontakta mig? Klicka på länken nedan!
+    </p>
+<button id="contact-link"  type="button" class="btn btn-primary btn-lg">Kontakta mig</button>
+
+<div id="contact-form" style="display: none;">
+    <h2>Kontakta mig</h2>
+     <!-- Kontakt-formuläret -->
+    <form>
+        <div>
+            <label for="name">Namn:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+            <label for="email">E-post:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+            <label for="message">Meddelande:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Skicka</button>
+        <button type="button" id="close-form" class="btn btn-secondary btn-lg" >Stäng</button>
+    </form>
+</div>
+
+</div>

@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Sidan titel, dynamiskt hämtad från ViewData -->
+    <title>@ViewData["Title"] - Razor-appen</title>
+    
+    <!-- Länk till Bootstrap CSS för grundläggande styling -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    
+    <!-- Länk till anpassad CSS-fil för sidan -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body>
+    <!-- Header med navigation och datum -->
+    <header class="bg-light border-bottom mb-3">
+        <div class="container d-flex justify-content-between align-items-center py-2">
+
+            <div class="logo">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">Razor-appen</a>
+            </div>
+            <!-- Visar dagens datum -->
+            <div class="date">
+                @DateTime.Now.ToString("yyyy-MM-dd")
+            </div>
+        </div>
+    </header>
+
+    <!-- Huvudinnehåll för sidan -->
+    <div class="container">
+        <div class="row">
+            <!-- Sidebar med navigationslänkar -->
+            <nav class="col-md-3">
+                <ul class="nav flex-column bg-light p-3">
+                    <li class="nav-item">
+                        <!-- Länk till hemsidan -->
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Index">Hemsida</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Länk till sidan 'Om sidan' -->
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Omsidan">Om sidan</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Länk till sidan 'Razor' -->
+                        <a class="nav-link text-dark" asp-area="" asp-page="/Razor">Razor</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <!-- Huvudinnehåll som renderar sidans specifika innehåll -->
+            <main class="col-md-9 pb-3">
+                @RenderBody() <!-- Detta är platsen där innehållet från den aktuella sidan renderas -->
+            </main>
+        </div>
+    </div>
+
+    <!-- Footer med upphovsrättsinformation och länk till integritetspolicy -->
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Razor-appen - Melika Zolfagharian <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <!-- Länk till jQuery-->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <!-- Länk till Bootstrap's JavaScript bundle -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Länk till JavaScript-fil (site.js) -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    
+    <!-- Rendera eventuella scripts som definierats i en specifik sektion på sidan -->
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

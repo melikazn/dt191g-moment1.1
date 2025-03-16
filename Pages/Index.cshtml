@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+<!-- Hemsidan -->
+
+@{
+    // Sätt sidans titel till "Startsida"
+    ViewData["Title"] = "Startsida";
+}
+
+<!-- Huvudinnehåll på startsidan -->
+<div class="text-center">
+    <!-- Huvudrubrik för sidan -->
+    <h1 class="display-4">Välkommen till Razor-appen</h1>
+
+    <p class="lead">Det här är en enkel webbplats skapad med ASP.NET Razor Pages till kursen dt191g moment 1.1.</p>
+    
+    <img src="~/images/razor.png" alt="Välkommen" class="img-fluid rounded" />
+    
+
+    <div class="mt-4">
+        <a asp-page="/Razor" class="btn btn-primary btn-lg">Utforska Razor</a>
+
+        <a asp-page="/Omsidan" class="btn btn-secondary btn-lg">Om sidan</a>
+    </div>
+</div>

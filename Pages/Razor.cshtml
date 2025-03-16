@@ -1,0 +1,37 @@
+@page
+ <!-- Razor-sidan -->
+@{
+    ViewData["Title"] = "Razor";
+     <!-- Visar tid och datum -->
+    var currentDate = DateTime.Now;
+    var courses = new List<string>
+    {
+        "DT057G, Webbutveckling I",
+        "DT093G, Webbutveckling II",
+        "DT173G, Webbutveckling III"
+    };
+}
+<h2 class="text-primary">Razor</h2>
+<div class="mt-3 p-3 border bg-light">
+    <h3>Information</h3>
+    <p><strong>Datum/klockslag:</strong> @currentDate.ToString("yyyy-MM-dd HH:mm:ss")</p>
+    <p>
+         <!-- if-staten -->
+        @if (currentDate.DayOfWeek == DayOfWeek.Friday)
+        {
+            <span>Idag är det fredag!</span>
+        }
+        else
+        {
+            <span>Idag är det inte fredag!</span>
+        }
+    </p>
+    <h4>Kurser jag läst</h4>
+    <ul>
+         <!-- Loopar listan -->
+        @foreach (var course in courses)
+        {
+            <li>@course</li>
+        }
+    </ul>
+</div>
